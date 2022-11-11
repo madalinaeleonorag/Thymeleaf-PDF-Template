@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        @page {
+            size: A4 portrait;
+            margin-top: 1.5cm;
+            margin-left: 2.4cm;
+            margin-right: 2.4cm;
+            margin-bottom: 1cm;
+        }
+
+        @media print {
+            #footer {
+                position: fixed;
+                bottom: 0;
+                width: 100%;
+            }
+
+            #header {
+                position: fixed;
+                top: 0;
+                width: 100%;
+            }
+        }
+
+        body {
+            margin: 0px;
+        }
+
+        #header {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+        }
+
+        #footer {
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+        }
+
+        .footer-pagination {
+            position: relative;
+        }
+
+        #page-number::after {
+            counter-increment: page;
+            counter-reset: page 1;
+            content: counter(page);
+        }
+
+        #page-count::after {
+            content: counter(pages);
+        }
+    </style>
+</head>
+    <body>
+        <div id="header">
+            Header text
+        </div>
+
+        <div>
+            content on the page
+        </div>
+
+        <div id="footer">
+            Footer text
+
+            <div class="footer-pagination">
+                Page <span id="page-number"></span> from <span id="page-count"></span>
+            </div>
+        </div>
+    </body>
+</html>
