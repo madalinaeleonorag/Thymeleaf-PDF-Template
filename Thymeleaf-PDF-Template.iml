@@ -29,5 +29,6 @@
     <orderEntry type="library" name="Maven: com.itextpdf:itextpdf:5.5.11" level="project" />
     <orderEntry type="library" name="Maven: org.xhtmlrenderer:flying-saucer-core:9.1.11" level="project" />
     <orderEntry type="library" name="Maven: org.projectlombok:lombok:1.18.24" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-web:5.3.23" level="project" />
   </component>
 </module>
