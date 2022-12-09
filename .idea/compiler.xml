@@ -2,21 +2,17 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
-      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Thymeleaf-PDF-Template" />
+        <module name="DocumentGeneration" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="Thymeleaf-PDF-Template" target="11" />
-    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="Thymeleaf-PDF-Template" options="-parameters" />
+      <module name="DocumentGeneration" options="-parameters" />
     </option>
   </component>
 </project>
