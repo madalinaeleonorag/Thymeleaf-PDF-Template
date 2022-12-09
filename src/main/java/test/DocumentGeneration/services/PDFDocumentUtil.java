@@ -3,7 +3,7 @@ package test.DocumentGeneration.services;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import org.thymeleaf.context.Context;
-import types.TableData;
+import test.DocumentGeneration.types.TableData;
 
 import java.util.ArrayList;
 import java.util.HashMap;
