@@ -1,26 +1,27 @@
 package test.DocumentGeneration.services;
 
 import com.itextpdf.text.DocumentException;
-import org.thymeleaf.TemplateEngine;
+import org.springframework.stereotype.Component;
 import org.thymeleaf.context.Context;
-import org.thymeleaf.templateresolver.ClassLoaderTemplateResolver;
+import org.thymeleaf.spring5.SpringTemplateEngine;
 import org.xhtmlrenderer.pdf.ITextRenderer;
 import test.DocumentGeneration.types.TemplateCompletionResult;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
+@Component
 public class PDFGenerationService {
-    static TemplateEngine templateEngine = new TemplateEngine();
+    //static SpringTemplateEngine templateEngine = new SpringTemplateEngine();
 
-    public static TemplateCompletionResult completePDFGeneration() {
+    private final SpringTemplateEngine templateEngine;
 
-        ClassLoaderTemplateResolver templateResolver= new ClassLoaderTemplateResolver();
-        templateResolver.setSuffix(".html");
-        templateResolver.setTemplateMode("HTML");
-        templateResolver.setCacheable(false);
-        templateEngine.setTemplateResolver(templateResolver);
+    public PDFGenerationService(SpringTemplateEngine templateEngine) {
+        this.templateEngine = templateEngine;
+    }
 
+
+    public TemplateCompletionResult completePDFGeneration() {
         // Content for Template
         Context context = PDFDocumentUtil.setupData();
         // Template

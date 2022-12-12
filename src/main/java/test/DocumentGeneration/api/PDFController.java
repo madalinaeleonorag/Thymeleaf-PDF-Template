@@ -5,12 +5,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import test.DocumentGeneration.services.PDFGenerationService;
 import test.DocumentGeneration.types.TemplateCompletionResult;
-/*import test.DocumentGeneration.services.PDFGenerationService;
-import test.DocumentGeneration.types.TemplateCompletionResult;*/
 
 @RestController
 public class PDFController {
@@ -21,8 +18,8 @@ public class PDFController {
         this.pdfGenerationService = pdfGenerationService;
     }
 
-    @PostMapping(value = "/pdf", produces = MediaType.APPLICATION_PDF_VALUE, consumes = "application/json")
-    public ResponseEntity<byte[]> generatePdf(@RequestBody String id) {
+    @PostMapping(value = "/pdf", produces = MediaType.APPLICATION_PDF_VALUE)
+    public ResponseEntity<byte[]> generatePdf() {
         System.out.println("pdf requested");
 
         TemplateCompletionResult result = pdfGenerationService.completePDFGeneration();
